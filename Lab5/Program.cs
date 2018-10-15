@@ -12,14 +12,11 @@ namespace Lab5
 
         static void Main(string[] args)
         {
+
+            string doAgain;
             bool cont = true;
-
-            do
+            while (cont)
             {
-
-
-
-
 
                 Console.WriteLine("Welcome to the Factorial Calculator");
                 Console.WriteLine("Enter an integer that's greater than 0 but less than 10: ");
@@ -33,25 +30,26 @@ namespace Lab5
                     fact = fact * i;
                 }
                 Console.WriteLine("The factorial of " + (input) + " is " + (fact));
-                Console.WriteLine("Continue?(y/n)");
+
                 bool cont2 = true;
                 while (cont2)
                 {
-                    string yesOrNo;
 
-                    yesOrNo = Console.ReadLine().ToLower();
+                    Console.WriteLine("Continue?(y/n)");
+                    doAgain = Console.ReadLine().ToLower();
 
-                    if (yesOrNo == "y")
+                    if (doAgain == "y")
                     {
                         cont2 = false;
                     }
 
-                    else if (yesOrNo == "n")
+                    else if (doAgain == "n")
                     {
                         Console.WriteLine("Goodbye!");
+                        cont2 = false;
                         cont = false;
-                        
                     }
+
                     else
                     {
                         Console.WriteLine("Invalid input. Try Again!");
@@ -59,8 +57,8 @@ namespace Lab5
 
                 }
 
-            } while (cont);
-            
+            }
+            Console.ReadLine();
         }
     }
 }
